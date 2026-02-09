@@ -1,0 +1,29 @@
+{
+  "name": "@jlongyam/ansi",
+  "version": "1.0.0",
+  "description": "ANSI utilities",
+  "keywords": [
+    "ansi",
+    "utility"
+  ],
+  "author": "jlongyam",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jlongyam/ansi.git"
+  },
+  "homepage": "https://github.com/jlongyam/ansi",
+  "main": "index.js",
+  "devDependencies": {
+    "@jlongyam/repo": "^2.1.0"
+  },
+  "scripts": {
+    "test": "node ./test/icon.test.js"
+  },
+  "exports": {
+    "./icon": {
+      "require": "./dist/cjs/icon.js",
+      "import": "./dist/es/icon.js"
+    }
+  }
+}
