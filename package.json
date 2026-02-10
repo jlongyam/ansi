@@ -13,7 +13,7 @@
     "url": "git+https://github.com/jlongyam/ansi.git"
   },
   "homepage": "https://github.com/jlongyam/ansi",
-  "main": "index.js",
+  "main": "./dist/cjs/index.js",
   "devDependencies": {
     "@jlongyam/repo": "^2.1.1",
     "@web/dev-server": "^0.4.6"
@@ -23,13 +23,37 @@
     "test:code": "node ./test/code/code.test.mjs && node ./test/code/code.test.js",
     "test:style": "node ./test/style/style.test.mjs && node ./test/style/style.test.js",
     "test:color": "node ./test/color/color.test.mjs && node ./test/color/color.test.js",
+    "test:index": "node ./test/index.test.mjs && node ./test/index.test.js",
     "server": "web-dev-server",
     "changelog": "repo changelog"
   },
   "exports": {
+    ".": {
+      "require": "./dist/cjs/ansi.js",
+      "import": "./dist/es/ansi.js",
+      "browser": "./dist/iife/ansi.js"
+    },
     "./icon": {
       "require": "./dist/cjs/icon.js",
-      "import": "./dist/es/icon.js"
+      "import": "./dist/es/icon.js",
+      "browser": "./dist/iife/icon.js"
+    },
+    "./code": {
+      "require": "./dist/cjs/code.js",
+      "import": "./dist/es/code.js",
+      "browser": "./dist/iife/code.js"
+    },
+    "./style": {
+      "require": "./dist/cjs/style.js",
+      "import": "./dist/es/style.js",
+      "browser": "./dist/iife/style.js"
     }
-  }
+  },
+  "files": [
+    "dist",
+    "test",
+    "index.html",
+    "!test/*.mjs",
+    "!test/**/*.mjs"
+  ]
 }
