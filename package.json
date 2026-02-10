@@ -30,23 +30,19 @@
   "exports": {
     ".": {
       "require": "./dist/cjs/ansi.js",
-      "import": "./dist/es/ansi.js",
-      "browser": "./dist/iife/ansi.js"
+      "import": "./dist/es/ansi.js"
     },
     "./icon": {
       "require": "./dist/cjs/icon.js",
-      "import": "./dist/es/icon.js",
-      "browser": "./dist/iife/icon.js"
+      "import": "./dist/es/icon.js"
     },
     "./code": {
       "require": "./dist/cjs/code.js",
-      "import": "./dist/es/code.js",
-      "browser": "./dist/iife/code.js"
+      "import": "./dist/es/code.js"
     },
     "./style": {
       "require": "./dist/cjs/style.js",
-      "import": "./dist/es/style.js",
-      "browser": "./dist/iife/style.js"
+      "import": "./dist/es/style.js"
     }
   },
   "files": [
