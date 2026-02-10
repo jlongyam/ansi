@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ansi: icon</title>
+  <link rel="stylesheet" href="../../node_modules/@jlongyam/consolebox/dist/console.css">
+  <script src="../../dist/iife/icon.js"></script>
+</head>
+<body>
+  <div></div>
+  <script src="../../node_modules/@jlongyam/consolebox/dist/iife/consoleBox.js"></script>
+  <script>
+    function main() {
+      console.dir(icon);
+    }
+    window.addEventListener('load', function() {
+      window.defaultConsole = window.console
+      delete window.console;
+      window.console = consoleBox;
+      main()
+    });
+    
+  </script>
+</body>
+</html>
