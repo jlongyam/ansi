@@ -1,12 +1,10 @@
-import {
-  style as code,
-  styleReset as reset
-} from "./code.mjs";
+var textStyle = require('./code.js').textStyle;
 
-let style = {};
-const esc = '\x1b[';
-for(let i in code) {
-  style[i] = txt=> `${esc}${code[i]}m${txt}${esc}${reset[i]}m`;
+var style = {};
+for(i in textStyle) {
+  style[i] = function(txt) {
+    return `\x1b[${textStyle[i]}m${txt}\x1b[0m`;
+  }
 }
 
-export default style;
+module.exports = style;

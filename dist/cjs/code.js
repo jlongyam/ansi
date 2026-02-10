@@ -51,4 +51,4 @@ const bgBright = {
   white: 107
 };
 
-export { reset, textStyle, fg, fgBright, bg, bgBright };
+module.exports = { reset, textStyle, fg, fgBright, bg, bgBright };

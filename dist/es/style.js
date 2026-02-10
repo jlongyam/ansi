@@ -1,8 +1,7 @@
-import { textStyle } from "./code.mjs";
+import { textStyle } from "./code.js";
 
 let style = {};
 for(let i in textStyle) {
-  // `\x1b[${code}m${text}\x1b[0m`
   style[i] = txt=> `\x1b[${textStyle[i]}m${txt}\x1b[0m`;
 }
 

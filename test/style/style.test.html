@@ -3,16 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ansi: icon</title>
+  <title>ansi: style</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jlongyam/consoleBox@1.0.6/dist/console.css">
-  <script src="../../dist/iife/icon.js"></script>
+  <script src="../../dist/iife/code.js"></script>
+  <script src="../../dist/iife/style.js"></script>
 </head>
 <body>
   <div></div>
   <script src="https://cdn.jsdelivr.net/gh/jlongyam/consoleBox@1.0.6/dist/iife/consoleBox.js"></script>
   <script>
     function main() {
-      console.dir(icon);
+      var textStyle = code.textStyle;
+      // console.dir(textStyle)
+      for(i in textStyle ) {
+        console.log(`start ${style[i](String(i))} end`);
+      }
     }
     window.addEventListener('load', function() {
       window.defaultConsole = window.console

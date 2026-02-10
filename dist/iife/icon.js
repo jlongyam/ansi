@@ -1,4 +1,4 @@
-window.icon = {
+var icon = {
   ok: '√',
   notOk: '×',
   notEqual: '≠',

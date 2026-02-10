@@ -15,11 +15,14 @@
   "homepage": "https://github.com/jlongyam/ansi",
   "main": "index.js",
   "devDependencies": {
-    "@jlongyam/consolebox": "^1.0.6",
-    "@jlongyam/repo": "^2.1.0"
+    "@jlongyam/repo": "^2.1.0",
+    "@web/dev-server": "^0.4.6"
   },
   "scripts": {
-    "test:icon": "node ./test/icon.test.js && node ./test/icon.test.mjs"
+    "test:icon": "node ./test/icon/icon.test.mjs && node ./test/icon/icon.test.js",
+    "test:code": "node ./test/code/code.test.mjs && node ./test/code/code.test.js",
+    "test:style": "node ./test/style/style.test.mjs && node ./test/style/style.test.js",
+    "server": "web-dev-server"
   },
   "exports": {
     "./icon": {
