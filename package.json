@@ -22,6 +22,7 @@
     "test:icon": "node ./test/icon/icon.test.mjs && node ./test/icon/icon.test.js",
     "test:code": "node ./test/code/code.test.mjs && node ./test/code/code.test.js",
     "test:style": "node ./test/style/style.test.mjs && node ./test/style/style.test.js",
+    "test:color": "node ./test/color/color.test.mjs && node ./test/color/color.test.js",
     "server": "web-dev-server"
   },
   "exports": {

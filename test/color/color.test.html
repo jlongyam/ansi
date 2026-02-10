@@ -6,16 +6,19 @@
   <title>ansi: style</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jlongyam/consoleBox@1.0.6/dist/console.css">
   <script src="../../dist/iife/code.js"></script>
-  <script src="../../dist/iife/style.js"></script>
 </head>
 <body>
   <div></div>
   <script src="https://cdn.jsdelivr.net/gh/jlongyam/consoleBox@1.0.6/dist/iife/consoleBox.js"></script>
+  <script src="../../dist/iife/color.js"></script>
   <script>
     function main() {
-      var textStyle = code.textStyle;
-      for(i in textStyle ) {
-        console.log(`start ${style[i](String(i))} end`);
+      for (var name in code.fg) {
+        var s_color = `color.${name}`;
+        var s_bg = `bg.${name}`;
+        
+        console.log('before', color[name](s_color), 'after');
+        console.log('before', bg[name](s_bg), 'after');
       }
     }
     window.addEventListener('load', function() {

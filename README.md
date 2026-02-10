@@ -4,16 +4,10 @@ ANSI utilities.
 
 The primary goal for display ANSI in HTML.
 
-## Feature
+## Related
 
-- icon
-- code
-- style
+- [consoleBox](https://github.com/jlongyam/consoleBox)
 
 ## Alternative
 
-- [ansis]()
-
-## Related
-
-- [consoleBox]()
+- [ansis](https://github.com/webdiscus/ansis)

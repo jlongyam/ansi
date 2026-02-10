@@ -1,4 +1,4 @@
-import { fgBright, bg as name } from "./code.mjs";
+import { fgBright, bg as name } from "./code.js";
 
 const color = {};
 const bg = {};
