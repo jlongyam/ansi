@@ -49,7 +49,6 @@
     "dist",
     "test",
     "index.html",
-    "!test/*.mjs",
     "!test/**/*.mjs"
   ]
 }
