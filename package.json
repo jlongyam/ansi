@@ -31,6 +31,8 @@
     "test:code": "node ./test/code/code.test.mjs && node ./test/code/code.test.js",
     "test:style": "node ./test/style/style.test.mjs && node ./test/style/style.test.js",
     "test:color": "node ./test/color/color.test.mjs && node ./test/color/color.test.js",
+    "test:css": "node ./test/css/css.test.mjs",
+    "test:regex": "node ./test/regex/regex.test.mjs",
     "test:ansi": "node ./test/ansi/ansi.test.mjs && node ./test/ansi/ansi.test.js",
     "build": "rollup -c && node ./replace_mjs.mjs",
     "server": "web-dev-server",
