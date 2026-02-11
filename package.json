@@ -32,9 +32,9 @@
     "test:style": "node ./test/style/style.test.mjs && node ./test/style/style.test.js",
     "test:color": "node ./test/color/color.test.mjs && node ./test/color/color.test.js",
     "test:ansi": "node ./test/ansi/ansi.test.mjs && node ./test/ansi/ansi.test.js",
+    "build": "rollup -c && node ./replace_mjs.mjs",
     "server": "web-dev-server",
-    "changelog": "repo changelog",
-    "build": "rollup -c && node ./replace_mjs.mjs"
+    "changelog": "repo changelog"
   },
   "exports": {
     ".": {
