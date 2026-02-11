@@ -3,16 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ansi: code</title>
+  <title>ansi: regex</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jlongyam/consoleBox@1.0.7/dist/console.css">
+  <script src="../../dist/iife/code.js"></script>
 </head>
 <body>
   <script src="https://cdn.jsdelivr.net/gh/jlongyam/consoleBox@1.0.7/dist/iife/consoleBox.js"></script>
-  <script type="module">
-    import * as code from '../../src/code.mjs';
-    
+  <script src="../../dist/iife/color.js"></script>
+  <script src="../../dist//iife/regex.js"></script>
+  <script>
     function main() {
-      console.dir(code);
+      color = color.color; 
+      var find = regex.find;
+      var words = `Hi ${color.red('there')}, how are ${color.green('you')} ?`;
+      console.log(words);
+      console.dir( find(words) );
     }
     window.addEventListener('load', function() {
       window.defaultConsole = window.console

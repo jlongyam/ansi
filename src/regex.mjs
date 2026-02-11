@@ -9,7 +9,7 @@ function find(str) {
   let filter = [];
   for( let i in a) {
     filter.push({
-      escape: a[i][0].replace(/\x1b/g, "\x1b"),
+      escape: a[i][0].replace(/\x1b/g, "\\x1b"),
       code: a[i][1],
       index: a[i]['index']
     })

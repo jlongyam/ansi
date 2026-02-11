@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ansi: code</title>
+  <title>ansi: css</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jlongyam/consoleBox@1.0.7/dist/console.css">
+  <script src="../../dist/iife/code.js"></script>
+  <script src="../../dist/iife/css.js"></script>
 </head>
 <body>
   <script src="https://cdn.jsdelivr.net/gh/jlongyam/consoleBox@1.0.7/dist/iife/consoleBox.js"></script>
-  <script type="module">
-    import * as code from '../../src/code.mjs';
-    
+  <script>
     function main() {
-      console.dir(code);
+      console.dir(css);
     }
     window.addEventListener('load', function() {
       window.defaultConsole = window.console

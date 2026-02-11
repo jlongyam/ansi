@@ -44,6 +44,8 @@ export default (arg) => {
     style: "style",
     code: "code",
     color: 'color',
+    css: 'css',
+    regex: 'regex',
     index: 'ansi'
   };
   // == config special === //

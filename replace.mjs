@@ -9,4 +9,5 @@ function replace_mjs(path, name) {
 
 replace_mjs('./dist/cjs/style.js', 'code');
 replace_mjs('./dist/cjs/color.js', 'code');
+replace_mjs('./dist/cjs/css.js', 'code');
 replace_mjs('./dist/cjs/ansi.js', 'code');

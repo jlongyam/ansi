@@ -31,10 +31,10 @@
     "test:code": "node ./test/code/code.test.mjs && node ./test/code/code.test.js",
     "test:style": "node ./test/style/style.test.mjs && node ./test/style/style.test.js",
     "test:color": "node ./test/color/color.test.mjs && node ./test/color/color.test.js",
-    "test:css": "node ./test/css/css.test.mjs",
-    "test:regex": "node ./test/regex/regex.test.mjs",
+    "test:css": "node ./test/css/css.test.mjs && node ./test/css/css.test.js",
+    "test:regex": "node ./test/regex/regex.test.mjs && ./test/regex/regex.test.js",
     "test:ansi": "node ./test/ansi/ansi.test.mjs && node ./test/ansi/ansi.test.js",
-    "build": "rollup -c && node ./replace_mjs.mjs",
+    "build": "rollup -c && node ./replace.mjs",
     "server": "web-dev-server",
     "changelog": "repo changelog"
   },
@@ -58,6 +58,14 @@
     "./color": {
       "require": "./dist/cjs/color.js",
       "import": "./src/color.mjs"
+    },
+    "./css": {
+      "require": "./dist/cjs/css.js",
+      "import": "./src/css.mjs"
+    },
+    "./regex": {
+      "require": "./dist/cjs/regex.js",
+      "import": "./src/regex.mjs"
     }
   },
   "files": [
