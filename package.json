@@ -15,39 +15,54 @@
   "homepage": "https://github.com/jlongyam/ansi",
   "main": "./dist/cjs/index.js",
   "devDependencies": {
+    "@babel/preset-env": "^7.29.0",
     "@jlongyam/repo": "^2.1.1",
-    "@web/dev-server": "^0.4.6"
+    "@rollup/plugin-babel": "^6.1.0",
+    "@rollup/plugin-buble": "^1.0.3",
+    "@rollup/plugin-commonjs": "^29.0.0",
+    "@rollup/plugin-node-resolve": "^16.0.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@web/dev-server": "^0.4.6",
+    "rollup": "^4.57.1",
+    "typescript": "^5.9.3"
   },
   "scripts": {
     "test:icon": "node ./test/icon/icon.test.mjs && node ./test/icon/icon.test.js",
     "test:code": "node ./test/code/code.test.mjs && node ./test/code/code.test.js",
     "test:style": "node ./test/style/style.test.mjs && node ./test/style/style.test.js",
     "test:color": "node ./test/color/color.test.mjs && node ./test/color/color.test.js",
-    "test:index": "node ./test/index.test.mjs && node ./test/index.test.js",
+    "test:ansi": "node ./test/ansi/ansi.test.mjs && node ./test/ansi/ansi.test.js",
     "server": "web-dev-server",
-    "changelog": "repo changelog"
+    "changelog": "repo changelog",
+    "build": "rollup -c && node ./replace_mjs.mjs"
   },
   "exports": {
     ".": {
       "require": "./dist/cjs/ansi.js",
-      "import": "./dist/es/ansi.js"
+      "import": "./src/index.mjs"
     },
     "./icon": {
       "require": "./dist/cjs/icon.js",
-      "import": "./dist/es/icon.js"
+      "import": "./src/icon.mjs"
     },
     "./code": {
       "require": "./dist/cjs/code.js",
-      "import": "./dist/es/code.js"
+      "import": "./src/code.mjs"
     },
     "./style": {
       "require": "./dist/cjs/style.js",
-      "import": "./dist/es/style.js"
+      "import": "./src/style.mjs"
+    },
+    "./color": {
+      "require": "./dist/cjs/color.js",
+      "import": "./src/color.mjs"
     }
   },
   "files": [
     "dist",
     "test",
+    "src",
+    "!src/lab",
     "index.html",
     "!test/**/*.mjs"
   ]

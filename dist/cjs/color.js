@@ -1,21 +1,11 @@
-var code = require('./code.js');
+var code_mjs = require("./code.js"), color = {}, bg = {}, loop = function(i) {
+  color[i] = function(txt) {
+    return "[" + code_mjs.fgBright[i] + "m" + txt + "[0m";
+  }, bg[i] = function(txt) {
+    return "[" + code_mjs.bg[i] + "m" + txt + "[0m";
+  };
+};
 
-var fgBright = code.fgBright;
-var name = code.bg
-var color = {};
-var bg = {};
+for (var i in code_mjs.bg) loop(i);
 
-for( i in name ) {
-  color[i] = (function(i) {
-    return function(txt) {
-      return `\x1b[${fgBright[i]}m${txt}\x1b[0m`;
-    }
-  })(i);
-  bg[i] = (function(name,i) {
-    return function(txt) {
-      return `\x1b[${name[i]}m${txt}\x1b[0m`;
-    }
-  })(name,i)
-}
-
-module.exports = { color, bg };
+exports.bg = bg, exports.color = color;

@@ -1,6 +1,5 @@
-# https://EditorConfig.org
 root = true
-# global
+
 [*]
 indent_style = space
 indent_size = 2

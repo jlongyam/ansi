@@ -1,39 +1,37 @@
-var icon = {
-  ok: '√',
-  notOk: '×',
-  notEqual: '≠',
-  warning: '‼',
+module.exports = {
+  ok: "√",
+  notOk: "×",
+  notEqual: "≠",
+  warning: "‼",
   arrow: {
-    left:  '‹',
-    right: '›',
+    left: "‹",
+    right: "›",
     double: {
-      left:  '«',
-      right: '»'
+      left: "«",
+      right: "»"
     }
   },
   bullet: {
-    on:  '•',
-    off: '◦'
+    on: "•",
+    off: "◦"
   },
-  dot: '·',
-  method: 'ƒ',
-  summary: '∑',
-  block: '█',
-  love: '❤',
-  menu: '≡',
-  mark: '※',
-  select: '↕',
+  dot: "·",
+  method: "ƒ",
+  summary: "∑",
+  block: "█",
+  love: "❤",
+  menu: "≡",
+  mark: "※",
+  select: "↕",
   star: {
-    on:   '★',
-    off:  '☆'
+    on: "★",
+    off: "☆"
   },
-  section: '§',
-  para: '¶',
+  section: "§",
+  para: "¶",
   radio: {
-    on:   '◉',
-    off:  '◯'
+    on: "◉",
+    off: "◯"
   },
-  pointer: '▸'
-}
-
-module.exports = icon
+  pointer: "▸"
+};

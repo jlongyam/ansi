@@ -1,28 +1,11 @@
-// require code.js
-
-var color = (function() {
-  var name = code.fgBright;
-  var color = {};
-  for( var i in name ) {
-    color[i] = (function(i, name) {
-      return function(txt) {
-        return `\x1b[${name[i]}m${txt}\x1b[0m`;
-      }
-    })(i, name);
-  }
-  return color;
-})();
-
-var bg = (function() {
-  var name = code.bg;
-  var bg = {};
-  for( var i in name ) {
-    bg[i] = (function(i, name) {
-      return function(txt) {
-        return `\x1b[${name[i]}m${txt}\x1b[0m`;
-      }
-    })(i, name);
-  }
-  return bg;
-})();
-
+var color = function(exports, code_mjs) {
+  var color = {}, bg = {}, loop = function(i) {
+    color[i] = function(txt) {
+      return "[" + code_mjs.fgBright[i] + "m" + txt + "[0m";
+    }, bg[i] = function(txt) {
+      return "[" + code_mjs.bg[i] + "m" + txt + "[0m";
+    };
+  };
+  for (var i in code_mjs.bg) loop(i);
+  return exports.bg = bg, exports.color = color, exports;
+}({}, code);

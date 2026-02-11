@@ -13,6 +13,8 @@
   <script src="../../dist/iife/color.js"></script>
   <script>
     function main() {
+      bg = color.bg;
+      color = color.color;
       for (var name in code.fg) {
         var s_color = `color.${name}`;
         var s_bg = `bg.${name}`;
