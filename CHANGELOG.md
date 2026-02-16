@@ -6,6 +6,26 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [2.0.0] - 2026-02-16
+
+### Added
+
+- feature: add to html converter - _jlongyam_
+- feature: add fgBright and bgBright to color object - _jlongyam_
+
+### Fixed
+
+- fix: update types - _jlongyam_
+- fix: update cjs for legacy node - _jlongyam_
+
+### Changed
+
+- documentation: update changelog - _jlongyam_
+
+### Other
+
+- 2.0.0 - _jlongyam_
+
 ## [1.2.0] - 2026-02-11
 
 ### Added
