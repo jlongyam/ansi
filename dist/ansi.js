@@ -28,7 +28,7 @@ var ansi = function(exports) {
     magenta: 95,
     cyan: 96,
     white: 97
-  }, bg$1 = {
+  }, bg = {
     black: 40,
     red: 41,
     green: 42,
@@ -48,7 +48,7 @@ var ansi = function(exports) {
     white: 107
   }, code = Object.freeze({
     __proto__: null,
-    bg: bg$1,
+    bg: bg,
     bgBright: bgBright,
     fg: fg,
     fgBright: fgBright,
@@ -60,14 +60,23 @@ var ansi = function(exports) {
     };
   };
   for (var i$2 in textStyle) _loop$1(i$2);
-  var color = {}, bg = {}, _loop = function(i) {
-    color[i] = function(txt) {
+  var color = {
+    fg: {},
+    fgBright: {},
+    bg: {},
+    bgBright: {}
+  }, _loop = function(i) {
+    color.fg[i] = function(txt) {
+      return `[${fg[i]}m${txt}[0m`;
+    }, color.fgBright[i] = function(txt) {
       return `[${fgBright[i]}m${txt}[0m`;
-    }, bg[i] = function(txt) {
-      return `[${bg$1[i]}m${txt}[0m`;
+    }, color.bg[i] = function(txt) {
+      return `[${bg[i]}m${txt}[0m`;
+    }, color.bgBright[i] = function(txt) {
+      return `[${bgBright[i]}m${txt}[0m`;
     };
   };
-  for (var i$1 in bg$1) _loop(i$1);
+  for (var i$1 in fg) _loop(i$1);
   var theme_normal = {
     black: "#000",
     red: "#ef476f",
@@ -94,10 +103,9 @@ var ansi = function(exports) {
   css[textStyle.blink] = "", css[textStyle.rapid] = "", css[textStyle.inverse] = "filter: invert(100%)", 
   css[textStyle.invisible] = "visibility: hidden", css[textStyle.strike] = "text-decoration: line-through", 
   fg) css[fg[i]] = `color: ${theme_normal[i]}`, css[fgBright[i]] = `color: ${theme_bright[i]}`, 
-  css[bg$1[i]] = `background-color: ${theme_normal[i]}`, css[bgBright[i]] = `background-color: ${theme_bright[i]}`;
+  css[bg[i]] = `background-color: ${theme_normal[i]}`, css[bgBright[i]] = `background-color: ${theme_bright[i]}`;
   var regex = /\x1b\[([0-9;]*)m/g;
-  return exports.bg = bg, exports.code = code, exports.color = color, exports.css = css, 
-  exports.find = function(str) {
+  return exports.code = code, exports.color = color, exports.css = css, exports.find = function(str) {
     for (var match, a = []; null !== (match = regex.exec(str)); ) a.push(match);
     var filter = [];
     for (var i in a) filter.push({

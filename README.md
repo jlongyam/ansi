@@ -1,8 +1,6 @@
-# ansi
+# ANSI
 
-ANSI utilities.
-
-The primary goal for display ANSI in HTML.
+ANSI Utilities that work in HTML and Legacy Node.
 
 ## Related
 

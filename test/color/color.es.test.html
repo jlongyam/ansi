@@ -1,32 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ansi</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jlongyam/consoleBox@1.0.7/dist/console.css">
 </head>
+
 <body>
   <script src="https://cdn.jsdelivr.net/gh/jlongyam/consoleBox@1.0.7/dist/iife/consoleBox.js"></script>
   <script type="module">
-    import { color, bg } from "../../dist/ansi.mjs";
-    
+    import { color } from "../../dist/ansi.mjs";
+
     function main() {
-      for (let name in color) {
-        let s_color = `color.${name}`;
-        let s_bg = `bg.${name}`;
-        console.log('before', color[name](s_color), 'after');
+      var fg = color.fg;
+      var fgBright = color.fgBright;
+      var bg = color.bg;
+      var bgBright = color.bgBright;
+
+      for (var name in fg) {
+        var s_fg = `fg.${name}`;
+        var s_fgBright = `fgBright.${name}`;
+        var s_bg = `bg.${name}`;
+        var s_bgBright = `bgBright.${name}`;
+
+        console.log('before', fg[name](s_fg), 'after');
+        console.log('before', fgBright[name](s_fgBright), 'after');
         console.log('before', bg[name](s_bg), 'after');
+        console.log('before', bgBright[name](s_bgBright), 'after\n');
+
       }
     }
 
-    window.addEventListener('load', function() {
+    window.addEventListener('load', function () {
       window.defaultConsole = window.console
       delete window.console;
       window.console = consoleBox;
       main()
     });
-    
+
   </script>
 </body>
+
 </html>

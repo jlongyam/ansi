@@ -1,11 +1,19 @@
 var ansi = require("../../dist/ansi.cjs");
 
-var color = ansi.color;
-var bg = ansi.bg;
+var fg = ansi.color.fg;
+var fgBright = ansi.color.fgBright;
+var bg = ansi.color.bg;
+var bgBright = ansi.color.bgBright;
 
-for (var name in color) {
-  var s_color = `color.${name}`;
+for (var name in fg) {
+  var s_fg = `fg.${name}`;
+  var s_fgBright = `fgBright.${name}`;
   var s_bg = `bg.${name}`;
-  console.log('before', color[name](s_color), 'after');
+  var s_bgBright = `bgBright.${name}`;
+
+  console.log('before', fg[name](s_fg), 'after');
+  console.log('before', fgBright[name](s_fgBright), 'after');
   console.log('before', bg[name](s_bg), 'after');
+  console.log('before', bgBright[name](s_bgBright), 'after\n');
+
 }
