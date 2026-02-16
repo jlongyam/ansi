@@ -1,0 +1,23 @@
+:root {
+  --ansi-bold-font-weight: 700;
+  --ansi-dim-opacity: 0.8;
+  --ansi-black: #2e3436;
+  --ansi-red: #cc0000;
+  --ansi-green: #4e9a06;
+  --ansi-yellow: #c4a000;
+  --ansi-blue: #3465a4;
+  --ansi-magenta: #75507b;
+  --ansi-cyan: #06989a;
+  --ansi-white: #d3d7cf;
+  --ansi-frame-outline:	1px solid;
+  --ansi-superscript-font-size:	80%;
+  --ansi-subscript-font-size:	80%;
+  --ansi-bright-black: #555753;
+  --ansi-bright-red: #ef2929;
+  --ansi-bright-green: #8ae234;
+  --ansi-bright-yellow: #fce94f;
+  --ansi-bright-blue: #729fcf;
+  --ansi-bright-magenta: #ad7fa8;
+  --ansi-bright-cyan: #34e2e2;
+  --ansi-bright-white: #eeeeec;
+}

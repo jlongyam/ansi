@@ -1,29 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ansi: regex</title>
+  <title>ansi: colorRGB</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jlongyam/consoleBox@1.0.7/dist/console.css">
+  <script src="../../dist/ansi.js"></script>
 </head>
+
 <body>
-  <div></div>
   <script src="https://cdn.jsdelivr.net/gh/jlongyam/consoleBox@1.0.7/dist/iife/consoleBox.js"></script>
-  <script type="module">
-    import { color, find } from '../../dist/ansi.mjs';
- 
+  <script>
+    var color = ansi.color;
+    console.log(
+      color.fgRGB([255,0,0], 'red')+' '+
+      color.fgRGB([0,255,0], 'green')+' '+
+      color.fgRGB([0,0,255], 'blue')
+    );
     function main() {
-      let words = `Hi ${color.fg.red('there')}, how are ${color.fg.green('you')} ?`;
-      console.log(words);
-      console.dir( find(words) );
+      console.log(
+        color.fgRGB([255,0,0], 'red')+' '+
+        color.fgRGB([0,255,0], 'green')+' '+
+        color.fgRGB([0,0,255], 'blue')
+      );
     }
-    window.addEventListener('load', function() {
+    window.addEventListener('load', function () {
       window.defaultConsole = window.console
       delete window.console;
       window.console = consoleBox;
       main()
     });
-    
   </script>
 </body>
+
 </html>

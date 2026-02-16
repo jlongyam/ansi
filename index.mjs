@@ -4,6 +4,8 @@ import style from './src/style.mjs';
 import color from './src/color.mjs';
 import css from './src/css.mjs';
 import { regex, find } from './src/regex.mjs';
+import html from './src/html.mjs';
+
 export {
   icon,
   code,
@@ -11,5 +13,6 @@ export {
   color,
   css,
   regex,
-  find
+  find,
+  html
 }

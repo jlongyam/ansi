@@ -54,10 +54,10 @@ export var code: Readonly<{
     };
 }>;
 export namespace color {
-    let fg: {};
-    let fgBright: {};
-    let bg: {};
-    let bgBright: {};
+    function fg256(n: any, text: any): string;
+    function bg256(n: any, text: any): string;
+    function fgRGB(arr: any, txt: any): string;
+    function bgRGB(arr: any, txt: any): string;
 }
 export var css: {
     0: string;
@@ -67,6 +67,7 @@ export function find(str: any): {
     code: string;
     index: number;
 }[];
+export function html(str: any): string;
 export namespace icon {
     let ok: string;
     let notOk: string;

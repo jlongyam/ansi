@@ -22,6 +22,7 @@
     "@rollup/plugin-node-resolve": "^16.0.3",
     "@rollup/plugin-terser": "^0.4.4",
     "@web/dev-server": "^0.4.6",
+    "fancy-ansi": "^0.1.3",
     "rollup": "^4.57.1",
     "typescript": "^5.9.3"
   },
@@ -40,10 +41,14 @@
     "test:style:mjs": "node ./test/style/style.test.mjs",
     "test:color": "node ./test/color/color.test.cjs",
     "test:color:mjs": "node ./test/color/color.test.mjs",
+    "test:color256": "node ./test/color/color256.test.cjs",
+    "test:color256:mjs": "node ./test/color/color256.test.mjs",
+    "test:colorRgb:mjs": "node ./test/color/colorRgb.test.mjs",
     "test:css": "node ./test/css/css.test.cjs",
     "test:css:mjs": "node ./test/css/css.test.mjs",
     "test:regex": "node ./test/regex/regex.test.cjs",
     "test:regex:mjs": "node ./test/regex/regex.test.mjs",
+    "test:html:mjs": "node test/html/html.test.mjs",
     "escheck": "repo escheck ./dist/ansi.cjs ./dist/ansi.js",
     "changelog": "repo changelog"
   },
@@ -57,7 +62,8 @@
   "files": [
     "dist",
     "test",
-    "index.html"
+    "index.html",
+    "color256.png"
   ],
   "publishConfig": {
     "access": "public",
