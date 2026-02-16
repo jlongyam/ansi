@@ -1,5 +1,4 @@
-import { color } from '../../src/color.mjs';
-import { find } from '../../src/regex.mjs';
+import { color, find } from '../../dist/ansi.mjs';
 
 let words = `Hi ${color.red('there')}, how are ${color.green('you')} ?`;
 console.log(words);

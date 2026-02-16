@@ -1,10 +1,8 @@
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
-import buble from '@rollup/plugin-buble';
 import babel from '@rollup/plugin-babel';
 import terser from '@rollup/plugin-terser';
 import pkg from './package.json' with { type: 'json' }
-import { fileURLToPath } from 'node:url';
 
 //-- auto-generate --//
 const year = new Date().getFullYear();
@@ -18,45 +16,32 @@ const banner = `
   */
   `
 //-- manual-config --//
-const strict = false;
+const strict = true;
 const plugins = [
   commonjs(),
   resolve(),
-  buble(),
   babel({
     babelHelpers: 'bundled',
-    // presets: [["@babel/preset-env", {
-    //   targets: "> 0.25%, last 2 versions, Firefox ESR, not dead, node 5.12.0, chrome 50"
-    // }]]
+    presets: [["@babel/preset-env", {
+      targets: "node 5, chrome 50"
+    }]]
   })
 ];
 export default (arg) => {
   let minify = arg['config-minify'] ? true : false;
-  // let mod = pkg.type === 'module' ? 'js' : 'mjs'
-  let mod = "mjs"
+  let mod = "mjs";
   //-- manual-config --//
-  const path_in = './src';
+  const path_in = '.';
   const path_out = `./dist`;
-  const format = ['cjs','iife'];
+  const format = ['cjs', 'es', 'iife'];
   // lib { <file_name>: <export_name> }
   const lib = {
-    icon: 'icon',
-    style: "style",
-    code: "code",
-    color: 'color',
-    css: 'css',
-    regex: 'regex',
-    index: 'ansi'
+    'index': 'ansi'
   };
   // == config special === //
-  let url_code = new URL(`${path_in}/code.${mod}`, import.meta.url);
-  let global_code = fileURLToPath(url_code);
-  let globals = {
-    [global_code]: 'code'
-  };
-  let external = [
-    `./code.${mod}`
-  ];
+  let globals = {};
+  let external = [];
+  // == end config special === //
   const terser_ = [
     terser({
       compress: {
@@ -77,10 +62,18 @@ export default (arg) => {
   //-- auto-generate --//
   let output = {};
   let lib_keys = Object.keys(lib);
-  for (let i = 0; i < lib_keys.length; i++) { output[lib_keys[i]] = [] };
+  for (let i = 0; i < lib_keys.length; i++) { output[lib_keys[i]] = [] }
   for (let i = 0; i < format.length; i++) {
     let output_keys = Object.keys(output);
     for(let a = 0; a < output_keys.length; a++ ) {
+      let ext = (
+        format[i] === 'cjs' ? 'cjs' :
+        format[i] === 'es' ? 'mjs' :
+        format[i] === 'umd' ? 'umd.js' :
+        format[i] === 'system' ? 'sys.js' :
+        format[i] === 'amd' ? 'amd.js' :
+        'js' )
+      ;
       output[output_keys[a]].push({
         format: format[i],
         name: lib[output_keys[a]],
@@ -88,8 +81,8 @@ export default (arg) => {
         banner: banner,
         strict: strict,
         file: minify
-          ? `${path_out}/${format[i]}/${lib[output_keys[a]]}.min.js`
-          : `${path_out}/${format[i]}/${lib[output_keys[a]]}.js`,
+          ? `${path_out}/${lib[output_keys[a]]}.min.${ext}`
+          : `${path_out}/${lib[output_keys[a]]}.${ext}`,
         plugins: terser_
       })
     }

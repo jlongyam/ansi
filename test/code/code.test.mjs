@@ -1,3 +1,3 @@
-import * as code from '../../src/code.mjs';
+import {code} from '../../dist/ansi.mjs';
 
 console.log(code)

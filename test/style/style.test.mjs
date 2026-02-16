@@ -1,6 +1,5 @@
-import { textStyle } from "../../src/code.mjs";
-import style from "../../src/style.mjs";
+import {style} from "../../dist/ansi.mjs";
 
-for( let i in textStyle ) {
+for( let i in style ) {
   console.log(`start ${style[i](String(i))} end`);
 }

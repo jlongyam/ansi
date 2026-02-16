@@ -1,7 +1,6 @@
-import { fg } from "../../src/code.mjs";
-import { color, bg } from "../../src/color.mjs";
+import { color, bg } from "../../dist/ansi.mjs";
 
-for (let name in fg) {
+for (let name in color) {
   let s_color = `color.${name}`;
   let s_bg = `bg.${name}`;
   console.log('before', color[name](s_color), 'after');

@@ -9,11 +9,10 @@
 <body>
   <script src="https://cdn.jsdelivr.net/gh/jlongyam/consoleBox@1.0.7/dist/iife/consoleBox.js"></script>
   <script type="module">
-    import { fg } from "../../src/code.mjs";
-    import { color, bg } from "../../src/color.mjs";
+    import { color, bg } from "../../dist/ansi.mjs";
     
     function main() {
-      for (let name in fg) {
+      for (let name in color) {
         let s_color = `color.${name}`;
         let s_bg = `bg.${name}`;
         console.log('before', color[name](s_color), 'after');

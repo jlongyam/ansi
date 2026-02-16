@@ -13,7 +13,6 @@
     "url": "git+https://github.com/jlongyam/ansi.git"
   },
   "homepage": "https://github.com/jlongyam/ansi",
-  "main": "./dist/cjs/index.js",
   "devDependencies": {
     "@babel/preset-env": "^7.29.0",
     "@jlongyam/repo": "^2.1.1",
@@ -26,54 +25,42 @@
     "rollup": "^4.57.1",
     "typescript": "^5.9.3"
   },
+  "main": "./dist/ansi.cjs",
   "scripts": {
-    "test:icon": "node ./test/icon/icon.test.mjs && node ./test/icon/icon.test.js",
-    "test:code": "node ./test/code/code.test.mjs && node ./test/code/code.test.js",
-    "test:style": "node ./test/style/style.test.mjs && node ./test/style/style.test.js",
-    "test:color": "node ./test/color/color.test.mjs && node ./test/color/color.test.js",
-    "test:css": "node ./test/css/css.test.mjs && node ./test/css/css.test.js",
-    "test:regex": "node ./test/regex/regex.test.mjs && ./test/regex/regex.test.js",
-    "test:ansi": "node ./test/ansi/ansi.test.mjs && node ./test/ansi/ansi.test.js",
-    "build": "rollup -c && node ./replace.mjs",
+    "build": "rollup -c",
+    "types": "tsc",
     "server": "web-dev-server",
+    "test:ansi": "node ./test/ansi.test.cjs",
+    "test:ansi:mjs": "node ./test/ansi.test.mjs",
+    "test:icon": "node ./test/icon/icon.test.cjs",
+    "test:icon:mjs": "node ./test/icon/icon.test.mjs",
+    "test:code": "node ./test/code/code.test.cjs",
+    "test:code:mjs": "node ./test/code/code.test.mjs",
+    "test:style": "node ./test/style/style.test.cjs",
+    "test:style:mjs": "node ./test/style/style.test.mjs",
+    "test:color": "node ./test/color/color.test.cjs",
+    "test:color:mjs": "node ./test/color/color.test.mjs",
+    "test:css": "node ./test/css/css.test.cjs",
+    "test:css:mjs": "node ./test/css/css.test.mjs",
+    "test:regex": "node ./test/regex/regex.test.cjs",
+    "test:regex:mjs": "node ./test/regex/regex.test.mjs",
+    "escheck": "repo escheck ./dist/ansi.cjs ./dist/ansi.js",
     "changelog": "repo changelog"
   },
   "exports": {
     ".": {
-      "require": "./dist/cjs/ansi.js",
-      "import": "./src/index.mjs"
-    },
-    "./icon": {
-      "require": "./dist/cjs/icon.js",
-      "import": "./src/icon.mjs"
-    },
-    "./code": {
-      "require": "./dist/cjs/code.js",
-      "import": "./src/code.mjs"
-    },
-    "./style": {
-      "require": "./dist/cjs/style.js",
-      "import": "./src/style.mjs"
-    },
-    "./color": {
-      "require": "./dist/cjs/color.js",
-      "import": "./src/color.mjs"
-    },
-    "./css": {
-      "require": "./dist/cjs/css.js",
-      "import": "./src/css.mjs"
-    },
-    "./regex": {
-      "require": "./dist/cjs/regex.js",
-      "import": "./src/regex.mjs"
+      "require": "./dist/ansi.cjs",
+      "import": "./dist/ansi.mjs",
+      "types": "./dist/ansi.d.mts"
     }
   },
   "files": [
     "dist",
     "test",
-    "src",
-    "!src/lab",
-    "index.html",
-    "!test/**/*.mjs"
-  ]
+    "index.html"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://npm.pkg.github.com/"
+  }
 }

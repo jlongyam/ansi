@@ -1,3 +1,3 @@
-import icon from "../../src/icon.mjs";
+import {icon} from "../../dist/ansi.mjs";
 
 console.log(icon);

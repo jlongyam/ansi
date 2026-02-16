@@ -1,3 +1,3 @@
-import css from '../../src/css.mjs';
+import {css} from '../../dist/ansi.mjs';
 
 console.log(css);
