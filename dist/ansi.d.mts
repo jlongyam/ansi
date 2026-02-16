@@ -1,4 +1,3 @@
-export var bg: {};
 export var code: Readonly<{
     __proto__: any;
     bg: {
@@ -54,7 +53,12 @@ export var code: Readonly<{
         strike: number;
     };
 }>;
-export var color: {};
+export namespace color {
+    let fg: {};
+    let fgBright: {};
+    let bg: {};
+    let bgBright: {};
+}
 export var css: {
     0: string;
 };
